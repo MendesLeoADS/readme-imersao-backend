@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradiente escuro */
+    background-size: 400% 400%; /* Define o tamanho do gradiente para animação */
+    animation: gradientBackground 15s ease infinite; /* Animação do fundo */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white; /* Contraste com o fundo */
+}
+
+/* Animação do gradiente */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Adicionar "linhas tecnológicas" com um overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Tamanho das linhas */
+    z-index: 1;
+    pointer-events: none; /* Permite interação com os elementos da página */
+}
+
+/* Para manter os elementos acima do overlay */
+h1, p, a {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Estilização do título h1 */
+h1 {
+    font-family: 'Bungee Spice', cursive; 
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+/* Estilização dos parágrafos */
+p, p1 {
+    text-align: center; 
+    margin: 15px 13%; 
+    line-height: 1.6; 
+    color: rgb(255, 255, 255);
+    font-family: "Nerko One", serif;
+    font-size: 25px;
+}
+
+/* Estilo do Botão */
+.botao {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 20px 33%; 
+    font-family: 'Nerko One', cursive; 
+    font-size: 18px;
+    color: rgb(241, 187, 187);
+    background: linear-gradient(to right, rgb(255, 94, 2), rgb(233, 148, 37));
+    text-decoration: none; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Efeito hover no botão */
+.botao:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, rgb(250, 142, 54), rgb(255, 109, 24)); 
+    color:rgb(255, 255, 255)
+}
